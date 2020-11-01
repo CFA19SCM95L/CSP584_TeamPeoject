@@ -150,47 +150,48 @@ public class Utilities extends HttpServlet {
      * variable
      */
 
-    // public void logout() {
-    //     session.removeAttribute("username");
-    //     session.removeAttribute("usertype");
-    // }
+    public void logout() {
+        session.removeAttribute("userid");
+        session.removeAttribute("username");
+        session.removeAttribute("usertype");
+    }
 
     /* logout Function checks whether the user is loggedIn or Not */
 
-    // public boolean isLoggedin() {
-    //     if (session.getAttribute("username") == null)
-    //         return false;
-    //     return true;
-    // }
+    public boolean isLoggedin() {
+        if (session.getAttribute("username") == null)
+            return false;
+        return true;
+    }
 
     /* username Function returns the username from the session variable. */
 
-    // public String username() {
-    //     if (session.getAttribute("username") != null)
-    //         return session.getAttribute("username").toString();
-    //     return null;
-    // }
+    public String username() {
+        if (session.getAttribute("username") != null)
+            return session.getAttribute("username").toString();
+        return null;
+    }
 
     /* usertype Function returns the usertype from the session variable. */
-    // public String usertype() {
-    //     if (session.getAttribute("usertype") != null)
-    //         return session.getAttribute("usertype").toString();
-    //     return null;
-    // }
+    public String usertype() {
+        if (session.getAttribute("usertype") != null)
+            return session.getAttribute("usertype").toString();
+        return null;
+    }
 
     /*
      * getUser Function checks the user is a customer or retailer or manager and
      * returns the user class variable.
      */
-    // public User getUser() {
-    //     String usertype = usertype();
-    //     HashMap<String, User> hm = new HashMap<String, User>();
-    //     try {
-    //         hm = MySqlDataStoreUtilities.selectUser();
-    //     } catch (Exception e) {
-    //     }
-    //     User user = hm.get(username());
-    //     return user;
-    // }
+    public User getUser() {
+        String usertype = usertype();
+        HashMap<String, User> hm = new HashMap<String, User>();
+        try {
+            hm = MySqlDataStoreUtilities.selectUser();
+        } catch (Exception e) {
+        }
+        User user = hm.get(username());
+        return user;
+    }
 
 }

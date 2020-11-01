@@ -27,6 +27,9 @@ public class Login extends HttpServlet {
 
 
 		pw.println("<div class='6u'><section><header><h2>Log In</h2></header>");
+		if (request.getParameter("correct") != null) {
+			pw.print("<h4 style='color:red'>Please check your username, password and user type!</h4>");
+		}
 		pw.println("<form method='post' action='Home'>");
 		pw.println("<table style='width:100%'><tr style='border-bottom:5px '><td><h3>Username</h3></td><td>");
 		
@@ -53,8 +56,9 @@ public class Login extends HttpServlet {
 			String usertype = request.getParameter("usertype");
 			String lat="";
 			String longt="";
-			lat = ApiUtilities.getLatLongPositions(address).get(0);
-			longt = ApiUtilities.getLatLongPositions(address).get(1);
+			ArrayList<String> res = ApiUtilities.getLatLongPositions(address);
+			lat = res.get(0);
+			longt = res.get(1);
 			// try {
 			// 	lat = ApiUtilities.getLatLongPositions(address).get(0);
 			// 	longt = ApiUtilities.getLatLongPositions(address).get(1);
@@ -64,10 +68,19 @@ public class Login extends HttpServlet {
 
 			System.out.println("Create : "+username +":" + password +":"+email+ ":"+address+":" + usertype);
 			System.out.println("Lat : " + lat + "  Longt : " + longt);
+			MySqlDataStoreUtilities.insertUser( username, password, email, usertype, address, lat, longt, address);
 		} else if ( request.getParameter("user").equals("Modify")) {
+			int userId = 3;
 			String password = request.getParameter("password");
 			String address = request.getParameter("address");
+			String lat="";
+			String longt="";
+			ArrayList<String> res = ApiUtilities.getLatLongPositions(address);
+			lat = res.get(0);
+			longt = res.get(1);
 			System.out.println("Update : " + password +":" +address);
+			MySqlDataStoreUtilities.updateUser(userId, password, address, lat, longt, address);
+
 		}
 		
 

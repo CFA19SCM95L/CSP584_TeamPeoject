@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 
-@WebServlet("/BookingCustomer")
+@WebServlet("/Notification")
 
 /* 
 	Home class uses the printHtml Function of Utilities class and prints the Header,LeftNavigationBar,
@@ -16,7 +16,7 @@ import java.util.*;
 
 */
 
-public class BookingCustomer extends HttpServlet {
+public class Notification extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
@@ -34,7 +34,7 @@ public class BookingCustomer extends HttpServlet {
 		pw.println("<div class='6u'><section><header><h2>Review Booking</h2><span class='byline'></span> <br><hr><header></section>");
 		pw.println("<div><table><tr><th>BookId</th><th>Customer Name</th><th>Provider Name</th><th>Provider Type</th><th>Date</th><th>Time</th><th>Note</th><th>AddNote</th><th>Cancel</th></tr>");
 		for (Book book : bookList) {
-			pw.println("<form method='POST' action='BookingCustomer'><tr>");
+			pw.println("<form method='POST' action='Notification'><tr>");
 			pw.println("<td>"+ book.getId() + "</td>");
 			pw.println("<td>"+ book.getCustomerName() + "</td>");
 			pw.println("<td>"+ book.getProvideName() + "</td>");

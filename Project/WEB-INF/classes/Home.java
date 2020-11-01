@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Home")
 
@@ -20,8 +21,17 @@ public class Home extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
-
 		Utilities utility = new Utilities(request, pw);
+
+		if (!utility.isLoggedin()) {
+			HttpSession session = request.getSession(true);
+			System.out.println("LogIn: Not");
+		} else {
+			HttpSession session = request.getSession();
+			User user = utility.getUser();
+			// System.out.println("User|" + user.getUserName() + " | " + user.getPassword());
+		}
+
 		utility.printHtml("Header.html");
 		// utility.printHtml("Content.html");
 		ArrayList<News> newsList = ApiUtilities.getHealthNews();
@@ -60,8 +70,38 @@ public class Home extends HttpServlet {
 		if (request.getParameter("action").equals("Login")) {
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
-			System.out.println("Login : " + username + ":" + password);
-		} else if (request.getParameter("action").equals("AddReview") ) {
+			// System.out.println("Login : " + username + ":" + password);
+
+			HashMap<String, User> hm = new HashMap<String, User>();
+			// user details are validated using a file
+			// if the file containts username and passoword user entered user will be
+			// directed to home page
+			// else error message will be shown
+			try {
+				hm = MySqlDataStoreUtilities.selectUser();
+			} catch (Exception e) {
+
+			}
+
+			User user = hm.get(username);
+			if (user != null) {
+				String user_password = user.getPassword();
+				if (password.equals(user_password)) {
+					// System.out.println("Correct account!");
+					HttpSession session = request.getSession(true);
+					session.setAttribute("userid", user.getId());
+
+					session.setAttribute("username", user.getUserName());
+					session.setAttribute("usertype", user.getUsertype());
+					response.sendRedirect("Home");
+					return;
+				} 
+			}
+			response.sendRedirect("Login?correct=false");
+
+			
+
+		} else if (request.getParameter("action").equals("AddReview")) {
 			String review = request.getParameter("review");
 			String rate = request.getParameter("rate");
 			System.out.println("AddReview : " + review + ":" + rate);

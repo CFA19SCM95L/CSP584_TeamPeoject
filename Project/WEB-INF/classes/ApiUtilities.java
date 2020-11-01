@@ -75,7 +75,7 @@ public class ApiUtilities {
     }
 
     public static ArrayList<String> getLatLongPositions(String address)  {
-        String add = address.replaceAll("\\s", "");
+        String add = address.replaceAll("\\s", "/");
         StringBuilder sb = new StringBuilder();
         try {
             URL url = new URL(urlPre + add + APIKEY);
@@ -101,10 +101,24 @@ public class ApiUtilities {
             JSONObject jObjMain = new JSONObject(s);
             JSONArray results = jObjMain.getJSONArray("results");
             JSONObject newsObj = (JSONObject) results.get(0);
+            // JSONArray component = newsObj.getJSONArray("address_components");
+            // JSONObject o1 = (JSONObject) component.get(3);
+            // System.out.println(o1.getString("long_name"));
+
+            // JSONObject o2 = (JSONObject) component.get(5);
+            
+
+
+
             JSONObject geometry = newsObj.getJSONObject("geometry");
             JSONObject res = (JSONObject) geometry.getJSONObject("location");
             result.add(res.getDouble("lat")+"");
             result.add(res.getDouble("lng")+"");
+            // System.out.println(o1.getString("long_name") +", " +o2.getString("short_name"));
+            // result.add(o1.getString("long_name"));
+            // result.add(o2.getString("short_name"));
+
+
             return result;
         } catch (Exception e) {
             e.printStackTrace();

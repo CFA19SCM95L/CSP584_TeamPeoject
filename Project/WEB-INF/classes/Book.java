@@ -1,31 +1,61 @@
 public class Book {
-	private String id;
-	private String name;
+	private int id;
+	private String customerName;
+	private String provideName;
+	private String appointmentDate;
 	private String time;
 	private String note;
+	private String providerType;
 
-	public Book(String id, String name, String time, String note) {
+	public Book(int id, String customerName, String provideName,String providerType, String appointmentDate,String time, String note) {
 		this.id = id;
-		this.name = name;
+		this.customerName = customerName;
+		this.provideName = provideName;
+		this.providerType = providerType;
+		this.appointmentDate = appointmentDate;
 		this.time = time;
 		this.note = note;
 
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getCustomerName() {
+		return customerName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getProvideName() {
+		return provideName;
+	}
+
+	public void setProvideName(String provideName) {
+		this.provideName = provideName;
+	}
+
+	public String getProviderType() {
+		return providerType;
+	}
+
+	public void setProviderType(String providerType) {
+		this.providerType = providerType;
+	}
+
+	public String getAppointmentDate() {
+		return appointmentDate;
+	}
+
+	public void setAppointmentDate(String appointmentDate) {
+		this.appointmentDate = appointmentDate;
 	}
 
 	public String getTime() {

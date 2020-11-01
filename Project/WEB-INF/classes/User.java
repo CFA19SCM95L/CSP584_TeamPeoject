@@ -1,28 +1,40 @@
 public class User {
-	private String id;
+	private int id;
+	private String userName;
 	private String email;
 	private String password;
 	private String usertype;
 	private String lat;
 	private String longt;
 	private String address;
+	private String location;
 
-	public User(String id, String email, String password, String usertype, String lat, String longt, String address) {
+	public User(int id,String userName, String password,String email, String usertype,String address, String lat, String longt, String location) {
 		this.id = id;
+		this.userName = userName;
 		this.email = email;
 		this.password = password;
 		this.usertype = usertype;
 		this.lat = lat;
 		this.longt = longt;
 		this.address = address;
+		this.location = location;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getEmail() {
@@ -71,5 +83,13 @@ public class User {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 }
