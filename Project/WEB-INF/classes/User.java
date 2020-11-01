@@ -1,5 +1,19 @@
+/*create table Registration
+(
+userId integer,
+userName varchar(40),
+password varchar(40),
+email varchar(60),
+usertype varchar(40),
+address varchar(60),
+locationLat varchar(20),
+locationLong varchar(20),
+location  varchar(30),
+Primary key(userId)
+);*/
 public class User {
-	private String id;
+	private int id;
+	private String userName;
 	private String email;
 	private String password;
 	private String usertype;
@@ -7,8 +21,9 @@ public class User {
 	private String longt;
 	private String address;
 
-	public User(String id, String email, String password, String usertype, String lat, String longt, String address) {
+	public User(int id, String userName, String email, String password, String usertype, String lat, String longt, String address) {
 		this.id = id;
+		this.userName = userName;
 		this.email = email;
 		this.password = password;
 		this.usertype = usertype;
@@ -17,12 +32,19 @@ public class User {
 		this.address = address;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
+	}
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getEmail() {
