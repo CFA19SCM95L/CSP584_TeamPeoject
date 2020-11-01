@@ -35,7 +35,7 @@ address varchar(60),
 locationLat varchar(20),
 locationLong varchar(20),
 location  varchar(30),
-OpenTime varchar(20), 
+openTime varchar(20), 
 closeTime varchar(20), 
 postTime date,
 Primary key(postId)
