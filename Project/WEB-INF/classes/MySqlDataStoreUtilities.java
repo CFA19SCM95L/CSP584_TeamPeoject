@@ -66,7 +66,19 @@ public class MySqlDataStoreUtilities {
                             + "(9,'Dr. Ryan M Siewert','Family Medicine','1321 W Dakota Pkwy, Williston, ND 58801','48.1559559','-103.6530379','Williston, ND','09:30:00','17:30:00','2020-09-05'),"
                             + "(7,'Dr. Brynna Connor','Family Medicine','2911 Medical Arts St Building #10, Austin, TX 78705','30.2880745','-97.7295075','Austin, TX','08:00:00','17:30:00','2020-09-05'),"
                             + "(11,'Dr. Milton Waner','hemangiomas and vascular malformations','210 East 64th Street, 7th Floor, New York City, NY 10065','40.7640723','-73.9655038','New York City, NY','08:15:00','16:30:00','2020-09-06'),"
-                            + "(12,'Dr. David J. Benditzson',' Primary Care','111 N Wabash Ave STE 1412, Chicago, IL 60602','41.8834746','-87.6279434','Chicago, IL','09:30:00','16:30:00','2020-09-01');")
+                            + "(12,'Dr. David J. Benditzson',' Primary Care','111 N Wabash Ave STE 1412, Chicago, IL 60602','41.8834746','-87.6279434','Chicago, IL','09:30:00','16:30:00','2020-09-01'),"
+                            + "(13,'Dr. Shirish N. Shah',' Cardiology ','5600 W Addison St Ste 400, Chicago, IL 60634','41.9460911','-87.7693311','Chicago, IL','09:00:00','17:30:00','2020-09-12'),"
+							+ "(14,'Dr. Adrian Ma',' Cardiovascular ','5200 Jose Figueres Ave #215, San Jose, CA 95116','37.3615718','-121.8524164','San Jose, CA','08:00:00','15:30:00','2020-09-15'),"
+							+ "(15,'Dr. Russell O. Schub','Gastroenterology','8875 Centre Park Dr suite d, Columbia, MD 21045','39.2289939','-76.8156736','Columbia, MD','10:00:00','16:00:00','2020-09-20'),"
+							+ "(16,'Dr. March E. Seabrook','Gastroenterology','131 Summer Pl Dr, West Columbia, SC 29169','34.0042347','-81.1231826','West Columbia, SC','08:00:00','17:00:00','2020-09-22'),"
+							+ "(17,'Dr. Mark W. Galland','Orthopedics','11200 Gov Manly Way #309, Raleigh, NC 27614','35.9477509','-78.543784','Raleigh, NC','09:00:00','17:30:00','2020-09-27'),"
+							+ "(18,'Dr. Jon J. Warner','Orthopedics','55 Fruit St, Boston, MA 02114','42.362706','-71.0708467','Boston, MA','08:30:00','16:30:00','2020-09-28'),"
+							+ "(19,'Dr. Peter Steinberg','Urology','330 Brookline Ave, Boston, MA 02215','42.3398798','-71.106747','Boston, MA','08:30:00','16:30:00','2020-10-08')," 
+							+ "(20,'Dr. Robert Oates','Urology','725 Albany St #3b, Boston, MA 02118','42.3348727','-71.0743435','Boston, MA','09:30:00','18:30:00','2020-10-09'),"
+							+ "(21,'Dr. Edward Zoltan','Urology','175 Remsen St 12th floor, Brooklyn, NY 11201','40.6934999','-73.9935536','Brooklyn, NY','08:30:00','18:00:00','2020-10-11')," 
+							+ "(22,'Dr. Ken Moadel','Ophthalmology','110 E 40th St Floor 6, New York, NY 10016','40.7504117','-73.980187','New York, NY','08:30:00','17:00:00','2020-10-12')," 
+							+ "(23,'Dr. Jacqueline Wong','Ophthalmology','945 Hildebrand Ln NE, Bainbridge Island, WA 98110','47.6336187','-122.5199271','Bainbridge Island, WA','09:00:00','17:00:00','2020-10-15')," 
+							+ "(24,'Dr. John H. Wilkins','Ophthalmology','9155 SW Barnes Rd #430, Portland, OR 97225','45.510411','-122.772308','Portland, OR','09:00:00','14:00:00','2020-10-16');")
                     .execute();
 
             conn.prepareStatement("INSERT INTO Appointment (providerId, customerId, appointmentDate, appointmentTime)"
