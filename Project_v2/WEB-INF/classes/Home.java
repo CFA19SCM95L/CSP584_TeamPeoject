@@ -34,6 +34,13 @@ public class Home extends HttpServlet {
 			// System.out.println("User|" + user.getUserName() + " | " + user.getPassword());
 		}
 
+		HashMap<String, ArrayList<Review>> hm =MongoDBDataStoreUtilities.selectDoctorReview();
+		for (Map.Entry<String, ArrayList<Review>> entry: hm.entrySet() ){
+			for (Review r :entry.getValue()  ) {
+				System.out.println(r.getId() + ":" + r.getReviewdate() + ":" + r.getReviewtext() + ":" + r.getReviewrating());
+			}
+		}
+
 		utility.printHtml("Header.html");
 		// utility.printHtml("Content.html");
 		ArrayList<News> newsList = ApiUtilities.getHealthNews();

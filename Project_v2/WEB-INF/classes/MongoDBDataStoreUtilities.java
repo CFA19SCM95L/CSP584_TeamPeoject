@@ -40,6 +40,18 @@ public class MongoDBDataStoreUtilities {
 
     }
 
+    public static void insertDefaultDoctorReview() {
+        insertDoctorReview("2", "7", "2020-11-01 16:59:17.007", "review1");
+        insertDoctorReview("2", "4", "2020-11-01 16:59:17.007", "review7");
+        insertDoctorReview("2", "2", "2020-11-01 16:59:17.007", "review8");
+        insertDoctorReview("5", "4", "2020-11-01 16:59:17.007", "review2");
+        insertDoctorReview("9", "6", "2020-11-01 16:59:17.007", "review3");
+        insertDoctorReview("7", "8", "2020-11-02 23:34:10.917", "review4");
+        insertDoctorReview("11", "3", "2020-11-02 23:34:10.917", "review5");
+        insertDoctorReview("12", "9", "2020-11-02 23:34:10.917", "review6");
+
+    }
+
     public static HashMap<String, ArrayList<Review>> selectDoctorReview() {
         HashMap<String, ArrayList<Review>> reviews = null;
 

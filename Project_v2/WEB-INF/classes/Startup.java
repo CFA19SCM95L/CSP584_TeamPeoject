@@ -19,6 +19,7 @@ public class Startup extends HttpServlet
             
             MySqlDataStoreUtilities.createTable();
             System.out.println("Insert Default data");
+            MongoDBDataStoreUtilities.insertDefaultDoctorReview();
 
             MySqlDataStoreUtilities.insertDefaultData();
         }
