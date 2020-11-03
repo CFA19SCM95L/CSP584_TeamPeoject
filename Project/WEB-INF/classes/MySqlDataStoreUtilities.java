@@ -365,8 +365,48 @@ public class MySqlDataStoreUtilities {
 
 		}				
 	}
-    
-    
+    /**************************************************GET 10 Doctors******************************************************/
+public static ArrayList<DoctorDetail> getTenDoctor()
+{	
+	ArrayList<DoctorDetail> list=new ArrayList<DoctorDetail>();
 
+	try 
+	{
+		getConnection();
+		
+		Statement stmt=conn.createStatement();
+		String getTenDoctorDetails="SELECT * FROM Doctordetails order by realName ASC limit 10";
+		ResultSet rs = stmt.executeQuery(getTenDoctorDetails);
+
+/*public DoctorDetail(int id, int doctorId,
+                String realName, String department,
+                String password, String usertype,
+                String lat, String longt,
+                String address, String location,
+                String openTime, String closeTime,
+                LocalDate postTime) */
+		while(rs.next())
+		{	
+			System.out.println("Wrong");
+				DoctorDetail doctorDetail = 
+				new DoctorDetail(rs.getInt("postId"),
+				rs.getInt("doctorId"),
+				rs.getString("realName"),
+				rs.getString("department"),
+				rs.getString("password"),rs.getString("usertype"),	
+				rs.getString("locationLat"),rs.getString("locationLong"),
+				rs.getString("address"),rs.getString("location"),rs.getString("openTime"),
+				rs.getString("closeTime"),rs.getDate("postTime").toLocalDate());
+
+			list.add(doctorDetail);
+		}
+	}
+	catch(Exception e)
+	{
+	}
+	System.out.println(list.toString());
+
+	return list;
+}	
 
 }
