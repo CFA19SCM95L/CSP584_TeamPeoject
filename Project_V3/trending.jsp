@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<!--
+	Ex Machina by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+    <title>Trending-Doctor</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-panels.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-desktop.css" />            
+        </noscript>
+    <link rel="stylesheet" href="css/style-table.css">
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+
+</head>
+
+<body class="left-sidebar">
+
+    <!-- Header -->
+    <div id="header">
+        <div class="container">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1><a href="#">Health Hub</a></h1>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li class="active"><a href="index.html">Homepage</a></li>
+                    <li><a href="left-sidebar.html">Login/Signup</a></li>
+                    <li><a href="right-sidebar.html">Messaging</a></li>
+                    <li><a href="no-sidebar.html">Setting</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Banner -->
+    <div id="banner">
+        <div class="container">
+        </div>
+    </div>
+    <!-- /Banner -->
+
+    <!-- Main -->
+    <div id="page">
+
+        <!-- Main -->
+        <div id="main" class="container">
+            <div class="row">
+
+                <div class="3u">
+                    <section class="sidebar">
+                        <header>
+                            <h2>Trending <br>  </h2>
+                        </header>
+                        <ul class="style1">
+                            <li><a href="#">Doctor</a></li>
+                            <li><a href="#">Hospital</a></li>
+                            <li><a href="#">Insurance</a></li>
+                            <li><a href="#">News</a></li>
+                        </ul>
+                    </section>
+                    <section class="sidebar">
+                        <header>
+                            <h2>Navigation Bar</h2>
+                        </header>
+                        <ul class="style1">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Search</a></li>
+                            <li><a href="#">Trending</a></li>
+                            <li><a href="#">People also viewed...</a></li>
+                            <li><a href="#">Future Requirements</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="9u skel-cell-important">
+                    <section>
+                        <header>
+                            <h2>Top 10 most liked doctors</h2>
+                            <span class="byline"></span> <br>
+
+                            </header>
+                    </section>
+                </div>
+
+                <div>
+                    <table>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Hospital</th>
+                            <th>Department</th>
+                            <th>Location</th>
+                            <th>Outpatient Time</th>
+                            <th>Rating</th>
+                            <th>Detailed Page</th>
+                        </tr>
+                        <tr>
+                            <td>Sophia</td>
+                            <td>Lubbock DT</td>
+                            <td>urology</td>
+                            <td>Lubbock,Tx.</td>
+                            <td>9am-15pm Thu-Fri</td>
+                            <td>5/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Bill</td>
+                            <td>California Medical Center</td>
+                            <td>neurosurgery</td>
+                            <td>Sabta Ana,CA</td>
+                            <td>10am-17pm Mon-Fri</td>
+                            <td>5/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jerry</td>
+                            <td>Florida Therapy Center</td>
+                            <td>internal medicine</td>
+                            <td>Tampa,FL</td>
+                            <td>9am-15pm Mon-Fri</td>
+                            <td>4.9/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dinny</td>
+                            <td>Chicago DT</td>
+                            <td>thoracic surgery</td>
+                            <td>Chicago,IL</td>
+                            <td>8am-16pm Mon-Fri</td>
+                            <td>4.8/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Mike</td>
+                            <td>Chicago DT</td>
+                            <td>traumatology</td>
+                            <td>Chicago,IL</td>
+                            <td>11am-18pm Mon-Fri</td>
+                            <td>4.5/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Jerry</td>
+                            <td>Florida Therapy Center</td>
+                            <td>internal medicine</td>
+                            <td>Tampa,FL</td>
+                            <td>9am-15pm Mon-Fri</td>
+                            <td>4.3/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Lily</td>
+                            <td>Chicago DT</td>
+                            <td>cerebral surgery</td>
+                            <td>Chicago,IL</td>
+                            <td>8am-15pm Mon-Fri</td>
+                            <td>3.5/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Bill</td>
+                            <td>Florida Therapy Center</td>
+                            <td>internal medicine</td>
+                            <td>Tampa,FL</td>
+                            <td>10am-16pm Mon-Fri</td>
+                            <td>3.4/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dinny</td>
+                            <td>Chicago DT</td>
+                            <td>thoracic surgery</td>
+                            <td>Chicago,IL</td>
+                            <td>8am-16pm Mon-Fri</td>
+                            <td>3/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Bobby</td>
+                            <td>Lubbock DT</td>
+                            <td>general surgery</td>
+                            <td>Lubbock,Tx.</td>
+                            <td>9am-15pm Mon-Fri</td>
+                            <td>2.5/5</td>
+                            <td><a href="https://google.com" target="blank">click for details</a></td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Main -->
+
+    </div>
+    <!-- /Main -->
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="6u skel-cell-important">
+                    <section>
+                        <h2>Contact Us</h2>
+                        <div class="balloon">
+                            <blockquote>&ldquo;&nbsp;&nbsp;clee99@hawk.iit.edu&nbsp;&nbsp;&rdquo;<br>
+                                <br>
+                                <strong>&ndash;&nbsp;&nbsp;Chen-En Lee</strong></blockquote>
+                        </div>
+                        <br><br>
+                        <div class="balloon">
+                            <blockquote>&ldquo;&nbsp;&nbsp;syang71@hawk.iit.edu&nbsp;&nbsp;&rdquo;<br>
+                                <br>
+                                <strong>&ndash;&nbsp;&nbsp;Sihan Yang</strong></blockquote>
+                        </div>
+                        <br><br>
+                        <div class="balloon">
+                            <blockquote>&ldquo;&nbsp;&nbsp;yzhu90@hawk.iit.edu&nbsp;&nbsp;&rdquo;<br>
+                                <br>
+                                <strong>&ndash;&nbsp;&nbsp;Yawei Zhu</strong></blockquote>
+                        </div>
+                        <div class="ballon-bgbtm">&nbsp;</div>
+                    </section>
+                </div>
+                <div class="3u">
+                    <section>
+                        <h2>Quick Link</h2>
+                        <ul class="default">
+                            <li>
+                                <!-- 									<h3>Mauris vulputate dolor sit amet</h3>
+                                 -->									<p><a href="#">HomePage</a></p>
+                            </li>
+                            <li>
+                                <!-- 									<h3>Fusce ultrices fringilla metus</h3>
+                                 -->									<p><a href="#">News</a></p>
+                            </li>
+                            <li>
+                                <!-- 									<h3>Donec dictum metus in sapien</h3>
+                                 -->									<p><a href="#">Search</a></p>
+                            </li>
+                            <li>
+                                <!-- 									<h3>Donec dictum metus in sapien</h3>
+                                 -->									<p><a href="#">Trending</a></p>
+                            </li>
+                            <li>
+                                <!-- 									<h3>Donec dictum metus in sapien</h3>
+                                 -->									<p><a href="#">Recommander</a></p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="3u">
+                    <section>
+                        <h2> More Features</h2>
+                        <ul class="default">
+                            <li>
+                                <!-- 									<h3>Mauris vulputate dolor sit amet</h3>
+                                 -->									<p><a href="#">Future Requirement 1</a></p>
+                            </li>
+                            <li>
+                                <!-- 									<h3>Fusce ultrices fringilla metus</h3>
+                                 -->									<p><a href="#">Future Requirement 2</a></p>
+                            </li>
+                            <li>
+                                <!-- 									<h3>Donec dictum metus in sapien</h3>
+                                 -->									<p><a href="#">Future Requirement 3</a></p>
+                            </li>
+                            <li>
+                                <!-- 									<h3>Donec dictum metus in sapien</h3>
+                                 -->									<p><a href="#">Future Requirement 4</a></p>
+                            </li>
+                            <li>
+                                <!-- 									<h3>Donec dictum metus in sapien</h3>
+                                 -->									<p><a href="#">Future Requirement 5</a></p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /Footer -->
+
+    <!-- Copyright -->
+    <div id="copyright" class="container">
+        Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+    </div>
+
+
+</body>
+
+</html>
