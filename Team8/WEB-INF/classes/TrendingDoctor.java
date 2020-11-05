@@ -73,7 +73,7 @@ public class TrendingDoctor extends HttpServlet {
          }
 
 
-        pw.println("</table></div></div>");
+        pw.println("</table></div></div></div>");
         utility.printHtml("TrendingFooter.html");
     }
 }
