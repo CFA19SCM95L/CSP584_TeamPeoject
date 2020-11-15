@@ -11,22 +11,26 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet'
+        type='text/css'>
     <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/skel.min.js"></script>
     <script src="js/skel-panels.min.js"></script>
     <script src="js/init.js"></script>
     <noscript>
-            <link rel="stylesheet" href="css/skel-noscript.css" />
-            <link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/style-desktop.css" />            
-        </noscript>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-desktop.css" />
+    </noscript>
     <link rel="stylesheet" href="css/style-table.css">
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 
+
+
 </head>
+
 
 <body class="homepage">
 
@@ -93,150 +97,124 @@
                     </section>
                 </div>
 
-                <div class="9u skel-cell-important">
+                <script>
+
+
+                    function initMap() {
+                        const myLatLng = { lat: 29.7310078, lng: -95.8036 };
+                        const myLatLng2 = { lat: 30.7310078, lng: -95.8036 };
+                        const myLatLng3 = { lat: 28.7310078, lng: -95.8036 };
+                        const myLatLng4 = { lat: 27.7310078, lng: -95.8036 };
+                        const myLatLng5 = { lat: 31.7310078, lng: -95.8036 };
+                        const myLatLng6 = { lat: 26.7310078, lng: -95.8036 };
+                        const map = new google.maps.Map(document.getElementById("map"), {
+                            zoom: 5,
+                            center: myLatLng,
+                        });
+                        new google.maps.Marker({
+                            position: myLatLng2,
+                            map,
+                            title: "Hello World!",
+                        });
+                        new google.maps.Marker({
+                            position: myLatLng3,
+                            map,
+                            title: "Hello World!",
+                        });
+                        new google.maps.Marker({
+                            position: myLatLng4,
+                            map,
+                            title: "Hello World!",
+                        });
+                        new google.maps.Marker({
+                            position: myLatLng5,
+                            map,
+                            title: "Hello World!",
+                        });                        
+                        new google.maps.Marker({
+                            position: myLatLng6,
+                            map,
+                            title: "Hello World!",
+                        });
+                    }
+                </script>
+            
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+                    defer></script>
+
+                <div class="6u">
                     <section>
                         <header>
-                            <h2>SERACH FOR THE DOCTOR - DETAIL PAGE</h2>
-                            <span class="byline"></span> <br>
+
+                            <div align="center">
+                                <section>
+                                    <h2>Recommandation:Doctor</h2>
+                                </section>
+                            </div>
                             <hr>
-                            <header>
+
+
+                            <!--detail informaiton table-->
+                            <table style="width:100% ">
+
+
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Location</th>
+                                    <th>Distance</th>
+                                    <th>Detailed Page</th>
+
+
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>Dr. Sue</td>
+                                    <td>gynecologic & cosmetic</td>
+                                    <td>Chicago, IL</td>
+                                    <td>59mile</td>
+                                    <td><a href="https://google.com" target="blank">click for details</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Dr. Sue</td>
+                                    <td>gynecologic & cosmetic</td>
+                                    <td>Chicago, IL</td>
+                                    <td>59mile</td>
+                                    <td><a href="https://google.com" target="blank">click for details</a></td>
+                                </tr>
+
+
+                            </table>
+
+                            <!--Map Loation -->
+                            <span class="byline"></span> <br>
+                            <div id="map" style="height:400px; width:100%"></div>
+
                     </section>
-                </div>
-                
-                <!--search bar -->    
-                <div>
 
-                <em style="color: white;">Search doctor:</em>
-                <div name="autofillform">
-                <input type="text" name="complete-field" value="" class="input"
-                    id="complete-field" onkeyup="doCompletion()" autocomplete="off"
-                    placeholder="search the doctor here.." style="padding: 5px; font-size: 16px;" /> 
-
-                    <BUTTON>Search</BUTTON><br>
-                    
-                    <div align="center">
-                    <section>
-                            <h2>DETAIL INFORMATION</h2>                  
-                    </section>
-                </div>
-                    
-                <!--detail informaiton table--> 
-                <table>
-
-                        <tr>
-                            <th>RealName</th>
-                            <th>Department</th>
-                            <th>Address</th>
-                            <th>Location</th>
-                            <th>Open Time</th>
-                            <th>Close Time</th>
-                            <th>Rating</th>
-                        </tr>
-                        <tr>
-                            <td>Dr. Sue Kafali-Nazarof</td>
-                            <td>gynecologic & cosmetic surgeon</td>
-                            <td>3000 N Halsted St Ste 720</td>
-                            <td>Chicago, IL 60657</td>
-                            <td>09:00:00</td>
-                            <td>17:00:00</td>
-                            <td>3.5</td>
-                        
-
-                    </table>
-
-                <!--Map Loation --> 
-               <span class="byline"></span> <br>
-                <div align="center">
-                    <section>
-                        <header>
-                            <h2>Map FOR LOCATION</h2>
-                           
-                            <header>
-                    </section>
-                添加Map Api
 
                 </div>
-                 
-                </div>
+
+                <!--search bar -->
+
 
             </div>
-
         </div>
-    </div>
-
-             <!--Book Available Time --> 
-                <div align="center">
-                    <section>
-                        <header>
-                            <h2>BOOK</h2>
-                           
-                            <header>
-                    </section>
-                </div>
-                <div align="center">
-
-                <label for="doctors">Choose an available time:</label>
-                <select name="doctor" id="doctors">
-                    <option value="09:00:00">09:00:00</option>
-                    <option value="09:00:00">09:00:00</option>
-                    <option value="11:00:00">11:00:00</option>
-                    <option value="12:00:00">12:00:00</option>
-                    <option value="13:00:00">13:00:00</option>
-                    <option value="14:00:00">14:00:00</option>
-                    <option value="15:00:00">15:00:00</option>
-                    <option value="16:00:00">16:00:00</option>
-                <span class="byline"></span> <br>
-                </select>
-                </div>
-
-               <!--Add Review and Rating --> 
-                <span class="byline"></span> <br>
-                <div align="center">
-                    <section>
-                        <header>
-                            <h2>Review</h2>                          
-                            <header>
-                    </section>
-                </div>
-               
-                <div align="center">
-
-                    <tr><td><h3>Review</h3></td><td>
-                    <textarea name='review' rows='4' cols='70' class='input' required></textarea></td></tr>
-
-                    <tr><td><h3>Rate</h3></td><td>
-                    <select name='rate' class='input'>
-                    <option value='0' selected>0</option>
-                    <option value='1'>1</option>
-                    <option value='2'>2</option>
-                    <option value='3'>3</option>
-                    <option value='4'>4</option>
-                    <option value='5'>5</option>
-                    <option value='6'>6</option>
-                    <option value='7'>7</option>
-                    <option value='8'>8</option>
-                    <option value='9'>9</option>
-                    <option value='10'>10</option>
-                    <span class="byline"></span> <br>
-                    </select></td></tr> 
-
-                </div>
-
-                <div align="center">
-                    
-                    <BUTTON>Add Review</BUTTON><br> 
-                    
-                </div>
 
 
 
-<!-- /Main -->
 
-    
+        <!-- /Main -->
 
-    <!-- Main -->
-                
-<!--<section class="sidebar">
+
+
+        <!-- Main -->
+
+        <!--<section class="sidebar">
                             <header>
                                 <h2>Nulla luctus eleifend</h2>
                             </header>
@@ -248,19 +226,19 @@
                                 <li><a href="#">Mauris vulputate dolor sit amet nibh</a></li>
                             </ul>
                         </section> -->
-                    </div>
-                </div>
-            </div>
-            <!-- Main -->
+    </div>
+    </div>
+    </div>
+    <!-- Main -->
 
-        </div>
+    </div>
     <!-- /Main -->
 
     <!-- Featured -->
-        <div id="featured">
-            <div class="container">
-                <div class="row">
-<!--                    <section class="4u">
+    <div id="featured">
+        <div class="container">
+            <div class="row">
+                <!--                    <section class="4u">
                         <div class="box">
                             <a href="#" class="image left"><img src="images/pics04.jpg" alt=""></a>
                             <h3>Etiam posuere augue</h3>
@@ -284,82 +262,92 @@
                             <a href="#" class="button">More</a>
                         </div>
                     </section> -->
-                </div>
-                <div class="divider"></div>
             </div>
+            <div class="divider"></div>
         </div>
+    </div>
     <!-- /Featured -->
 
     <!-- Footer -->
-        <div id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="6u skel-cell-important">
-                        <section>
-                            <h2>Contact Us</h2>
-                            <div class="balloon">
-                                <blockquote>&ldquo;&nbsp;&nbsp;clee99@hawk.iit.edu&nbsp;&nbsp;&rdquo;<br>
-                                    <br>
-                                    <strong>&ndash;&nbsp;&nbsp;Chen-En Lee</strong></blockquote>
-                            </div>
-                            <div class="ballon-bgbtm">&nbsp;</div>
-                        </section>
-                    </div>
-                    <div class="3u">
-                        <section>
-                            <h2>Quick Link</h2>
-                            <ul class="default">
-                                <li>
-<!--                                    <h3>Mauris vulputate dolor sit amet</h3>
- -->                                    <p><a href="Home">HomePage</a></p>
-                                </li>
-                                <li>
-<!--                                    <h3>Fusce ultrices fringilla metus</h3>
- -->                                    <p><a href="Home">News</a></p>
-                                </li>
-                                <li>
-<!--                                    <h3>Donec dictum metus in sapien</h3>
- -->                                    <p><a href="#">Search</a></p>
-                                </li>
-                                <li>
-<!--                                    <h3>Donec dictum metus in sapien</h3>
- -->                                    <p><a href="#">Trending</a></p>
-                                </li>
-                                <li>
-<!--                                    <h3>Donec dictum metus in sapien</h3>
- -->                                    <p><a href="#">Recommander</a></p>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div class="3u">
-                        <section>
-                            <h2> More Features</h2>
-                            <ul class="default">
-                                <li>
-<!--                                    <h3>Mauris vulputate dolor sit amet</h3>
- -->                                    <p><a href="#">Future Requirement 1</a></p>
-                                </li>
-                                <li>
-<!--                                    <h3>Fusce ultrices fringilla metus</h3>
- -->                                    <p><a href="#">Future Requirement 2</a></p>
-                                </li>
-                                <li>
-<!--                                    <h3>Donec dictum metus in sapien</h3>
- -->                                    <p><a href="#">Future Requirement 3</a></p>
-                                </li>
-                                <li>
-<!--                                    <h3>Donec dictum metus in sapien</h3>
- -->                                    <p><a href="#">Future Requirement 4</a></p>
-                                </li>
-                                <li>
-<!--                                    <h3>Donec dictum metus in sapien</h3>
- -->                                    <p><a href="#">Future Requirement 5</a></p>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-<!--                    <div class="3u">
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="6u skel-cell-important">
+                    <section>
+                        <h2>Contact Us</h2>
+                        <div class="balloon">
+                            <blockquote>&ldquo;&nbsp;&nbsp;clee99@hawk.iit.edu&nbsp;&nbsp;&rdquo;<br>
+                                <br>
+                                <strong>&ndash;&nbsp;&nbsp;Chen-En Lee</strong></blockquote>
+                        </div>
+                        <div class="ballon-bgbtm">&nbsp;</div>
+                    </section>
+                </div>
+                <div class="3u">
+                    <section>
+                        <h2>Quick Link</h2>
+                        <ul class="default">
+                            <li>
+                                <!--                                    <h3>Mauris vulputate dolor sit amet</h3>
+ -->
+                                <p><a href="Home">HomePage</a></p>
+                            </li>
+                            <li>
+                                <!--                                    <h3>Fusce ultrices fringilla metus</h3>
+ -->
+                                <p><a href="Home">News</a></p>
+                            </li>
+                            <li>
+                                <!--                                    <h3>Donec dictum metus in sapien</h3>
+ -->
+                                <p><a href="#">Search</a></p>
+                            </li>
+                            <li>
+                                <!--                                    <h3>Donec dictum metus in sapien</h3>
+ -->
+                                <p><a href="#">Trending</a></p>
+                            </li>
+                            <li>
+                                <!--                                    <h3>Donec dictum metus in sapien</h3>
+ -->
+                                <p><a href="#">Recommander</a></p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="3u">
+                    <section>
+                        <h2> More Features</h2>
+                        <ul class="default">
+                            <li>
+                                <!--                                    <h3>Mauris vulputate dolor sit amet</h3>
+ -->
+                                <p><a href="#">Future Requirement 1</a></p>
+                            </li>
+                            <li>
+                                <!--                                    <h3>Fusce ultrices fringilla metus</h3>
+ -->
+                                <p><a href="#">Future Requirement 2</a></p>
+                            </li>
+                            <li>
+                                <!--                                    <h3>Donec dictum metus in sapien</h3>
+ -->
+                                <p><a href="#">Future Requirement 3</a></p>
+                            </li>
+                            <li>
+                                <!--                                    <h3>Donec dictum metus in sapien</h3>
+ -->
+                                <p><a href="#">Future Requirement 4</a></p>
+                            </li>
+                            <li>
+                                <!--                                    <h3>Donec dictum metus in sapien</h3>
+ -->
+                                <p><a href="#">Future Requirement 5</a></p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <!--                    <div class="3u">
                         <section>
                             <h2>Nulla leifend</h2>
                             <p>Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat.</p>
@@ -383,16 +371,17 @@
                             <a href="#" class="button">More Collections</a>
                         </section>
                     </div> -->
-                </div>
             </div>
         </div>
+    </div>
     <!-- /Footer -->
 
     <!-- Copyright -->
-        <div id="copyright" class="container">
-            CSP584 Enterprise Web Application / Design: Team 8
-        </div>
+    <div id="copyright" class="container">
+        CSP584 Enterprise Web Application / Design: Team 8
+    </div>
 
 
-    </body>
+</body>
+
 </html>
