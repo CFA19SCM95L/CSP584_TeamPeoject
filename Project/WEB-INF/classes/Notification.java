@@ -31,7 +31,7 @@ public class Notification extends HttpServlet {
 		utility.printHtml("Header.html");
 
 
-		pw.println("<div class='6u'><section><header><h2>Review Booking</h2><span class='byline'></span> <br><hr><header></section>");
+		pw.println("<div class='9u'><section><header><h2>Review Booking</h2><span class='byline'></span> <br><hr><header></section>");
 		pw.println("<div><table><tr><th>BookId</th><th>Customer Name</th><th>Provider Name</th><th>Provider Type</th><th>Date</th><th>Time</th><th>Note</th><th>AddNote</th><th>Cancel</th></tr>");
 		for (Book book : bookList) {
 			pw.println("<form method='POST' action='Notification'><tr>");

@@ -9,9 +9,7 @@ public class User {
 	private String address;
 	private String location;
 
-	public User(int id,String userName, String password,String email, 
-	String usertype,String address, String lat, String longt, 
-	String location) {
+	public User(int id,String userName, String password,String email, String usertype,String address, String lat, String longt, String location) {
 		this.id = id;
 		this.userName = userName;
 		this.email = email;

@@ -24,14 +24,14 @@ public class Setting extends HttpServlet {
 		
 		Utilities utility = new Utilities(request,pw);
 		utility.printHtml("Header.html");
-		pw.println("<div class='6u'><section><header><h2>Change information</h2></header>");
-		pw.println("<form method='post' action='Login'>");
+		pw.println("<div class='9u'><section><header><h2>Change information</h2></header>");
+		pw.println("<form method='post' action='Home'>");
 		pw.println("<table style='width:100%'>");
 		pw.println("<tr><td><h3>Password</h3></td><td>");
 		pw.println("<input type='password' name='password' value='' class='input' required></input></td></tr>");
 		pw.println("<tr><td><h3>Address</h3></td><td>");
 		pw.println("<input type='text' name='address' value='' class='input' required></input></td></tr></table>");
-		pw.println("<input type='submit' class='btnbuy' name='user' value='Modify'style='float: right;height: 20px margin: 20px; margin-right: 10px;'></input>");
+		pw.println("<input type='submit' class='btnbuy' name='action' value='Modify'style='float: right;height: 20px margin: 20px; margin-right: 10px;'></input>");
 		pw.println("</form></section></div>");
 
 

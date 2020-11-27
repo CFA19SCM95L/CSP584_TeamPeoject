@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 import javax.servlet.http.HttpSession;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 @WebServlet("/Home")
 
@@ -32,19 +34,23 @@ public class Home extends HttpServlet {
 			// System.out.println("User|" + user.getUserName() + " | " + user.getPassword());
 		}
 
+
+
 		utility.printHtml("Header.html");
-		// utility.printHtml("Content.html");
 		ArrayList<News> newsList = ApiUtilities.getHealthNews();
 		// Head news
+
+
+
 		String headNews = newsList.get(0).getTitle();
 		pw.print("<div class='6u'><section><header>");
 		pw.print("<h2>" + newsList.get(0).getTitle() + "</h2>");
 		pw.print("<span class='byline'>" + newsList.get(0).getPublishedAt() + ". By " + newsList.get(0).getAuthor()
 				+ "</span></header>");
 		pw.print("<p>" + newsList.get(0).getDescription() + "</p>");
-		pw.print("<p><a href='DetailedNews?Title=" + newsList.get(0).getTitle() + "'><img src="
+		pw.print("<p><a href='DetailedNews?Title=" + newsList.get(0).getTitle().replaceAll("[^a-zA-Z0-9_-]", "") + "'><img src="
 				+ newsList.get(0).getUrlToImage() + " 	alt='' width='550' height='300'></a></p>");
-		pw.print("<a href='DetailedNews?Title=" + newsList.get(0).getTitle()
+		pw.print("<a href='DetailedNews?Title=" + newsList.get(0).getTitle().replaceAll("[^a-zA-Z0-9_-]", "")
 				+ "' class='button'>More Details</a></section></div>");
 		// Other news
 		pw.print("<div class='3u'><section class='sidebar'><header><h2>Other NEWS</h2></header>");
@@ -52,12 +58,15 @@ public class Home extends HttpServlet {
 		int i = 0;
 		for (News news : newsList) {
 			if (!news.getTitle().equals(headNews) && i < 3) {
-				pw.print("<li><a href='DetailedNews?Title=" + news.getTitle() + "'><img src=" + news.getUrlToImage()
+				pw.print("<li><a href='DetailedNews?Title=" + news.getTitle().replaceAll("[^a-zA-Z0-9_-]", "") + "'><img src=" + news.getUrlToImage()
 						+ " alt='' width='80' height='80'><p>" + news.getTitle() + "</p></a></li>");
 				i++;
 			}
 
 		}
+
+
+
 
 		pw.print("</ul></section></div>");
 
@@ -102,9 +111,34 @@ public class Home extends HttpServlet {
 			
 
 		} else if (request.getParameter("action").equals("AddReview")) {
-			String review = request.getParameter("review");
-			String rate = request.getParameter("rate");
-			System.out.println("AddReview : " + review + ":" + rate);
+			// String review = request.getParameter("review");
+			// String rate = request.getParameter("rate");
+			// // System.out.println("AddReview : " + review + ":" + rate);
+			// SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+			// Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+			// MongoDBDataStoreUtilities.insertDoctorReview("1", rate, timestamp+"", review);
+			// HashMap<String, ArrayList<Review>> hm =MongoDBDataStoreUtilities.selectDoctorReview();
+			// for (Map.Entry<String, ArrayList<Review>> entry: hm.entrySet() ){
+			// 	for (Review r :entry.getValue()  ) {
+			// 		System.out.println(r.getId() + ":" + r.getReviewdate() + ":" + r.getReviewtext() + ":" + r.getReviewrating());
+			// 	}
+			// }
+
+		} else if ( request.getParameter("action").equals("Modify")) {
+			PrintWriter pw = response.getWriter();
+
+			Utilities utility = new Utilities(request, pw);
+			User user = utility.getUser();
+			String password = request.getParameter("password");
+			String address = request.getParameter("address");
+			String lat="";
+			String longt="";
+			ArrayList<String> res = ApiUtilities.getLatLongPositions(address);
+			lat = res.get(0);
+			longt = res.get(1);
+			System.out.println("Update : " + password +":" +address);
+			MySqlDataStoreUtilities.updateUser(user.getId(), password, address, lat, longt, address);
 
 		}
 		doGet(request, response);

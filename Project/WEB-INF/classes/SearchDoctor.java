@@ -34,8 +34,9 @@ public class SearchDoctor extends HttpServlet {
 
 
 		utility.printHtml("Header.html");
+		// pw.println("<script type='text/javascript ' src ='javascript.js'></script>");
 
-		pw.println("<div class='6u'><section><a href=SearchHospital>Search Hospital</a><br><a href=SearchCompany>Search Company</a><br>");
+		pw.println("<div class='9u'><section><a href=SearchHospital>Search Hospital</a><br><a href=SearchInsurance>Search Insurance</a><br>");
 		if (!utility.isLoggedin()) {
 			HttpSession session = request.getSession(true);
 			System.out.println("LogIn: Not");
@@ -48,8 +49,10 @@ public class SearchDoctor extends HttpServlet {
 			// System.out.println("User|" + user.getUserName() + " | " + user.getPassword());
 		}
 		pw.println("<section><article id='doctorsearch'><hr style='width: 95%'><h2 style='font-size: 25px;'> Search Doctor</h2><hr style='width: 95%'>");
+
 		pw.println("<form  method='Get' action='SearchDoctor' >");
-		pw.println("<input type='text'  placeholder='Search Name or department' name='searchName'>");
+		pw.println("<input type='text' class='input	' id='searchId' placeholder='Search Name or department or location' size='50' name='searchName' onkeyup='doCompletion()' value='' >");
+		pw.println("<div id='auto-row'><table id='complete-table' class='gridtable' style='width: 315px;'></table></div>");
 		pw.println("<button class='btnbuy'>Submit</button>		");
 		pw.println("</form>		");
 		pw.println("<table id='table1' style='width:80%'>		");

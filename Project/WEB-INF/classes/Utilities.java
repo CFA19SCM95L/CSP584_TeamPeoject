@@ -53,51 +53,26 @@ public class Utilities extends HttpServlet {
         String result = HtmlToString(file);
         // to print the right navigation in header of username cart and logout etc
         if (file == "Header.html") {
-            // result = result + "<div id='menu' style='float: right;'><ul>";
-            // if (session.getAttribute("username") != null) {
-            //     String username = session.getAttribute("username").toString();
-            //     username = Character.toUpperCase(username.charAt(0)) + username.substring(1);
-            //     User user = getUser();
+            if (session.getAttribute("username") != null) {
+                String username = session.getAttribute("username").toString();
+                username = Character.toUpperCase(username.charAt(0)) + username.substring(1);
+                User user = getUser();
+                if (user.getUsertype().equals("admin")) {
+                    result = result + "<li><a href='InventoryReport'>Visualization</a></li>";
+                    result = result + "<li><a href='DataAnalytics'>DataAnalytics</a></li>";
+                    result = result + "<li><a href='Logout'>Logout</a></li>";
+                } else {
+                    result = result + "<li><a href='#'>Hello," + user.getUserName() + "</a></li>";
+                    result = result
+                            + "<li><a href='BookingCustomer'>Reservation</a></li><li><a href='Notification'>Notification</a></li><li><a href='Setting'>Setting</a></li><li><a href='Logout'>Logout</a></li>";
+                }
 
-            //     result = result + "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
-            //             + "<li><a><span class='glyphicon'>Hello," + username
-            //             + "</span></a></li>" + "<li><a href='Account'><span class='glyphicon'>Account</span></a></li>"
-            //             + "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
-            //     if (user.getUsertype().equals("Salesman")) {
-            //         result = result
-            //                 + "<li><a href='Registration'><span class='glyphicon'>CreateAccount</span></a></li>";
-            //         result = result + "<li><a href='UpdateOrder'><span class='glyphicon'>UpdateOrder</span></a></li>";
-            //     }
-            // } else
-            //     result = result + "<li><a href='ViewOrder'><span class='glyphicon'>View Order</span></a></li>"
-            //             + "<li><a href='Login'><span class='glyphicon'>Login</span></a></li>";
-            // result = result + "</ul></div></div><div id='page'><h1></h1>";
-
-
-
-            // if (session.getAttribute("username") != null) {
-            //     String username = session.getAttribute("username").toString();
-            //     username = Character.toUpperCase(username.charAt(0)) + username.substring(1);
-            //     User user = getUser();
-            //     if (user.getUsertype().equals("Store Manager")) {
-            //         result = result + "<div id='menu' style='float: right;'><ul>";
-
-            //         result = result + "<li><a href='AddProduct'><span class='glyphicon'>AddProduct</span></a></li>";
-            //         result = result
-            //                 + "<li><a href='ModifyProduct'><span class='glyphicon'>ModifyProduct</span></a></li>";
-            //         result = result
-            //                 + "<li><a href='RemoveProduct'><span class='glyphicon'>RemoveProduct</span></a></li>";
-            //                 result = result
-            //                 + "<li><a href='SalesReport'><span class='glyphicon'>SalesReport</span></a></li>";
-            //         result = result
-            //                 + "<li><a href='InventoryReport'><span class='glyphicon'>InventoryReport</span></a></li>";
-            //     }
-
-            //     result = result + "</ul></div></div><div id='page'><h1></h1>";
-            // }
-    
+            } else {
+                result = result + "<li><a href='Login'>Login/Signup</a></li>";
+            }
+            result += HtmlToString("Header2.html");
             pw.print(result);
-            
+
         } else
             pw.print(result);
     }
@@ -193,5 +168,7 @@ public class Utilities extends HttpServlet {
         User user = hm.get(username());
         return user;
     }
+
+
 
 }

@@ -22,11 +22,18 @@ public class DetailedDoctor extends HttpServlet {
 		PrintWriter pw = response.getWriter();		
 	
 		Utilities utility = new Utilities(request,pw);
+		Doctor doctor ;
+		String postId;
+		if  (request.getAttribute("data") != null) {
+			doctor = (Doctor) request.getAttribute("data");
+			postId = doctor.getPostId()+"";
+		} else {
+			postId = request.getParameter("postId");
+
+			doctor = MySqlDataStoreUtilities.getDoctor(Integer.parseInt(postId));
+		}
 
 
-		String postId = request.getParameter("postId");
-
-		Doctor doctor = MySqlDataStoreUtilities.getDoctor(Integer.parseInt(postId));
 
 
 		utility.printHtml("Header.html");
@@ -48,7 +55,7 @@ public class DetailedDoctor extends HttpServlet {
 		pw.println("});");
 		pw.println("} </script>");
 		pw.println("<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC1V_mk_-XXKc8e-N1W0N4g6zZRC_YZLMI&callback=initMap&libraries=&v=weekly' defer></script>");
-		pw.println("<div class='6u'>");
+		pw.println("<div class='9u'>");
 		pw.println("<section>");
 		pw.println("<header>");
 		pw.println("<div align='center'><section><h2>Doctor INFORMATION</h2></section></div><hr>");

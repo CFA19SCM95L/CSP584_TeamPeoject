@@ -19,19 +19,22 @@ import java.util.*;
 public class DetailedNews extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		PrintWriter pw = response.getWriter();
-		String title = request.getParameter("Title");
-
-		
+		PrintWriter pw = response.getWriter();		
 		Utilities utility = new Utilities(request,pw);
 		utility.printHtml("Header.html");
-		// utility.printHtml("Content.html");
+
+
+
+
+
+
+		String title = request.getParameter("Title");
 		ArrayList<News> newsList = ApiUtilities.getHealthNews();
 		//Head news
 		pw.println("<div class='6u'><section>");
 
 		for (News news : newsList) {
-			if (news.getTitle().equals(title)) {
+			if (news.getTitle().replaceAll("[^a-zA-Z0-9_-]", "").equals(title)) {
 				pw.println("<header><h2>"+ news.getTitle() +"</h2>");
 				pw.println("<span class='byline'>"+ news.getDescription() +"</span></header>");
 				pw.println("<p><a href='#'><img src="+ news.getUrlToImage()+" alt='' width='550' height='400'></a></p>");
@@ -47,12 +50,17 @@ public class DetailedNews extends HttpServlet {
 		int i =0;
 		for (News news:newsList) {
 			if (!news.getTitle().equals(title) && i < 3) {
-				pw.print("<li><a href='DetailedNews?Title="+news.getTitle()+"'><img src="+ news.getUrlToImage() +" alt='' width='80' height='80'><p>"+news.getTitle()+"</p></a></li>");
+				pw.print("<li><a href='DetailedNews?Title="+news.getTitle().replaceAll("[^a-zA-Z0-9_-]", "")+"'><img src="+ news.getUrlToImage() +" alt='' width='80' height='80'><p>"+news.getTitle()+"</p></a></li>");
 				i++;
 			}
 
 		}
 		pw.println("</ul></section></div>");
+
+
+
+
+
 
 
 

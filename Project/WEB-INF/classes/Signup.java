@@ -24,7 +24,7 @@ public class Signup extends HttpServlet {
 		
 		Utilities utility = new Utilities(request,pw);
 		utility.printHtml("Header.html");
-		pw.println("<div class='6u'><section><header><h2>Sign Up</h2></header>");
+		pw.println("<div class='9u'><section><header><h2>Sign Up</h2></header>");
 		pw.println("<form method='post' action='Login'>");
 		pw.println("<table style='width:100%'><tr><td><h3>Username</h3></td><td>");
 		pw.println("<input type='text' name='username' value='' class='input' required></input></td></tr>");

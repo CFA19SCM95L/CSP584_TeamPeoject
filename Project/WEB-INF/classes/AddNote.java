@@ -25,7 +25,7 @@ public class AddNote extends HttpServlet {
 		
 		Utilities utility = new Utilities(request,pw);
 		utility.printHtml("Header.html");
-		pw.println("<div class='6u'><section><header><h2>Add note</h2></header>");
+		pw.println("<div class='9u'><section><header><h2>Add note</h2></header>");
 		pw.println("<form method='post' action='BookingCustomer'>");
 		pw.println("<table style='width:100%'>");
 		pw.println("<tr><td><h3>Note</h3></td><td>");
