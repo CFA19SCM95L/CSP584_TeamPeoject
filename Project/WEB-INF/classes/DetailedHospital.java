@@ -62,7 +62,7 @@ public class DetailedHospital extends HttpServlet {
 		pw.println("<table style='width:100% '>");
 		pw.println("<tr><th>PostTime</th><th>Hospital Name</th><th>Address</th></tr>");
 		//Real value
-		pw.println("<tr><td>2020-10-29</td><td>"+ hospital.getHospitalName()  +"</td><td>"+ hospital.getAddress() +"</td></tr>");
+		pw.println("<tr><td>"+ hospital.getPostTime()  +"</td><td>"+ hospital.getHospitalName()  +"</td><td>"+ hospital.getAddress() +"</td></tr>");
 
 		pw.println("<tr><th>Location</th><th>OpenTime</th><th>Close Time</th><th>Book Service</th></tr>");
 		//Real value

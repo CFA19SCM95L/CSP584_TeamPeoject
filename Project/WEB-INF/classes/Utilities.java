@@ -62,9 +62,9 @@ public class Utilities extends HttpServlet {
                     result = result + "<li><a href='DataAnalytics'>DataAnalytics</a></li>";
                     result = result + "<li><a href='Logout'>Logout</a></li>";
                 } else {
-                    result = result + "<li><a href='#'>Hello," + user.getUserName() + "</a></li>";
+                    result = result + "<li><a href='PersonalProfile'>Hello," + user.getUserName() + "</a></li>";
                     result = result
-                            + "<li><a href='BookingCustomer'>Reservation</a></li><li><a href='Notification'>Notification</a></li><li><a href='Setting'>Setting</a></li><li><a href='Logout'>Logout</a></li>";
+                            + "<li><a href='BookingCustomer'>Reservation</a></li><li><a href='Setting'>Setting</a></li><li><a href='Logout'>Logout</a></li>";
                 }
 
             } else {

@@ -32,9 +32,7 @@ public class RecommanderRate extends HttpServlet {
         
         for(String user: prodRecmMap.keySet())
 		{
-            System.out.println(user);
             User u = utility.getUser();
-            System.out.println(user +" Compare: " +u.getId());
 
 			if(user.equals(u.getId()+""))
 			{
