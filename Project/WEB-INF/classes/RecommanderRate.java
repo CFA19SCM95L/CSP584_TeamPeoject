@@ -52,7 +52,7 @@ public class RecommanderRate extends HttpServlet {
 
 		pw.println("<div class='9u'><section><br>");
 
-		pw.println("<section><article id='doctorsearch'><hr style='width: 95%'><h2 style='font-size: 25px;'>Trending</h2><hr style='width: 95%'>");
+		pw.println("<section><article id='doctorsearch'><hr style='width: 95%'><h2 style='font-size: 25px;'>RecommanderRate</h2><hr style='width: 95%'>");
 
 		pw.println("<table id='table1' style='width:80%'>		");
 		pw.println("<tr><td>&nbsp;</td><td><b>DoctorName </b></td><td><b>Department </b></td><td><b>Location </b></td><td><b>Rank </b></td><td><b>DeatailPage</b></td></tr>		");
